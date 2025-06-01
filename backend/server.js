@@ -4,6 +4,7 @@ const cors = require('cors')
 
 
 const authRoutes = require("./routes/UserRoute")
+const stationRoutes = require("./routes/ChargingStationRoute")
 
 
 const PORT = 3000;
@@ -31,3 +32,4 @@ app.use(express.json())
 
 // Routes
 app.use("/api/auth", authRoutes)
+app.use("/api/stations", stationRoutes);
