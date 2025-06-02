@@ -7,7 +7,7 @@ const authRoutes = require("./routes/UserRoute")
 const stationRoutes = require("./routes/ChargingStationRoute")
 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 // connect to database
 mongoose.connect('mongodb+srv://praveen:Reaction@cluster0.c35enxr.mongodb.net/charging-station?retryWrites=true&w=majority&appName=Cluster0')
 
