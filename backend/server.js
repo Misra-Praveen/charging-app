@@ -9,9 +9,9 @@ const stationRoutes = require("./routes/ChargingStationRoute")
 
 const PORT = 3000;
 // connect to database
-mongoose.connect('mongodb+srv://praveen:Reaction@cluster0.c35enxr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://praveen:Reaction@cluster0.c35enxr.mongodb.net/charging-station?retryWrites=true&w=majority&appName=Cluster0')
 
-const db = mongoose.connection();
+const db = mongoose.connection;
 db.on("open", () => {
    console.log("Mongodb connected Successfuly")
 })
@@ -19,7 +19,7 @@ db.on("error", (err) => {
    console.log("Error", err)
 })
 
-const app = new express();
+const app = express();
 
 app.listen(PORT, () => {
    console.log(`server is running at port ${PORT}`)
